@@ -1,0 +1,23 @@
+{
+  "name": "lighthouse-app",
+  "version": "0.0.1",
+  "description": "lighthouse-app",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llirikk/lighthouse-app.git"
+  },
+  "keywords": [
+    "lighthouse",
+    "seo"
+  ],
+  "author": "kk",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/llirikk/lighthouse-app/issues"
+  },
+  "homepage": "https://github.com/llirikk/lighthouse-app#readme"
+}

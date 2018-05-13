@@ -1,20 +1,28 @@
-module.exports = new Lighthouse();
+const chromeLauncher = require('chrome-launcher');
+const lighthouse = require('lighthouse');
+
 
 class Lighthouse {
-	constructor {
-		this.opts = {
+	constructor() {
+		this.flags = {
 	  		chromeFlags: ['--show-paint-rects', '--headless']
 		}
+		this.configJson = null;
 	}
 
 	run(url) {
-		return chromeLauncher.launch({chromeFlags: this.opts.chromeFlags}).then(chrome => {
-    	opts.port = chrome.port;
-    	return lighthouse(url, this.opts, config).then(results => {
-        	// The gathered artifacts are typically removed as they can be quite large (~50MB+)
-      		delete results.artifacts;
-      		return chrome.kill().then(() => results)
-    	});
-  	});
+		return chromeLauncher.launch(this.flags).then(chrome => {
+			let flags = this.flags;
+			flags.port = chrome.port;
+
+    		return lighthouse(url, flags, this.configJson).then(results => {
+        		// The gathered artifacts are typically removed as they can be quite large (~50MB+)
+      			delete results.artifacts;
+      			return chrome.kill().then(() => results)
+    		});
+  		});
 	}
 }
+
+
+module.exports = new Lighthouse();

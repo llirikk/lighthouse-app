@@ -4,10 +4,6 @@ const lighthouse = require('./modules/lighth');
 
 const app = express();
 
-app.get('/', (req, res) => {
-	res.send('Hello World!');
-});
-
 app.get('/results', (req, res) => {
 	const url = req.query.url;
 	if (_.isEmpty(url)) {
@@ -19,6 +15,6 @@ app.get('/results', (req, res) => {
 	}).catch();
 });
 
-app.listen(3000, function () {
-	console.log('Server started at port 3000');
+app.listen(8001, function () {
+	console.log('Server started at port 8001');
 });

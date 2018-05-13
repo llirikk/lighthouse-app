@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/llirikk/lighthouse-app/issues"
   },
-  "homepage": "https://github.com/llirikk/lighthouse-app#readme"
+  "homepage": "https://github.com/llirikk/lighthouse-app#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "lighthouse": "^2.9.4"
+  }
 }

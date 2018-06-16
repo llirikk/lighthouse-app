@@ -3,3 +3,5 @@
 .gitignore
 node_modules
 __pycache__
+conf/hosts
+conf/config.json

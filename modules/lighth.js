@@ -1,13 +1,12 @@
 const chromeLauncher = require('chrome-launcher');
 const lighthouse = require('lighthouse');
+const config = require('./../conf/default.json');
 
 
 class Lighthouse {
-	constructor() {
-		this.flags = {
-	  		chromeFlags: ['--show-paint-rects', '--headless']
-		}
-		this.configJson = null;
+	constructor(flags, config) {
+		this.flags = flags
+		this.config = config;
 	}
 
 	run(url) {
@@ -25,4 +24,4 @@ class Lighthouse {
 }
 
 
-module.exports = new Lighthouse();
+module.exports = new Lighthouse(config.lighthouse.flags, config.lighthouse.config);
